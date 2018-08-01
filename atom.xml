@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>jinming独立博客</title>
+  
+  <subtitle>记录个人技术成长之路</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-08-01T14:16:35.928Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>tianjm</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《Thinking in Java》第四版笔记---类的加载和对象初始化</title>
+    <link href="http://yoursite.com/2018/08/01/%E3%80%8AThinking-in-Java%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%89%88%E7%AC%94%E8%AE%B0-%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%92%8C%E5%AF%B9%E8%B1%A1%E5%88%9D%E5%A7%8B%E5%8C%96/"/>
+    <id>http://yoursite.com/2018/08/01/《Thinking-in-Java》第四版笔记-类的加载和对象初始化/</id>
+    <published>2018-07-31T16:20:51.000Z</published>
+    <updated>2018-08-01T14:16:35.928Z</updated>
+    
+    <content type="html"><![CDATA[<p>直接放CSDN链接<br><a href="https://blog.csdn.net/m0_37040022/article/details/79036121" target="_blank" rel="noopener">《Thinking in Java》第四版笔记—类的加载和对象初始化</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;直接放CSDN链接&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/m0_37040022/article/details/79036121&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《Thinking in Java》第四版笔记—
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="《Thinking in Java》" scheme="http://yoursite.com/tags/%E3%80%8AThinking-in-Java%E3%80%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>eclipse+maven+junit单元测试问题总结</title>
+    <link href="http://yoursite.com/2018/08/01/eclipse-maven-junit%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2018/08/01/eclipse-maven-junit单元测试问题总结/</id>
+    <published>2018-07-31T16:18:40.000Z</published>
+    <updated>2018-08-01T14:18:49.933Z</updated>
+    
+    <content type="html"><![CDATA[<p>直接放CSDN链接<br><a href="https://blog.csdn.net/m0_37040022/article/details/80432972" target="_blank" rel="noopener">eclipse+maven+junit单元测试问题总结</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;直接放CSDN链接&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/m0_37040022/article/details/80432972&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;eclipse+maven+junit单元测试问
+      
+    
+    </summary>
+    
+      <category term="单元测试" scheme="http://yoursite.com/categories/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="eclipse,maven,junit" scheme="http://yoursite.com/tags/eclipse-maven-junit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>日志框架梳理</title>
+    <link href="http://yoursite.com/2018/08/01/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6%E6%A2%B3%E7%90%86/"/>
+    <id>http://yoursite.com/2018/08/01/日志框架梳理/</id>
+    <published>2018-07-31T16:17:19.000Z</published>
+    <updated>2018-08-01T14:15:12.795Z</updated>
+    
+    <content type="html"><![CDATA[<p>直接放CSDN链接吧<br><a href="https://blog.csdn.net/m0_37040022/article/details/80454332" target="_blank" rel="noopener">日志框架梳理</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;直接放CSDN链接吧&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/m0_37040022/article/details/80454332&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;日志框架梳理&lt;/a&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="日志框架" scheme="http://yoursite.com/categories/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6/"/>
+    
+    
+      <category term="日志框架" scheme="http://yoursite.com/tags/%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《深入剖析tomcat》思维导图</title>
+    <link href="http://yoursite.com/2018/08/01/%E3%80%8A%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90tomcat%E3%80%8B%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
+    <id>http://yoursite.com/2018/08/01/《深入剖析tomcat》思维导图/</id>
+    <published>2018-07-31T16:14:03.000Z</published>
+    <updated>2018-08-01T14:18:17.953Z</updated>
+    
+    <content type="html"><![CDATA[<p>以前在CSDN写了，这里直接放链接吧<br><a href="https://blog.csdn.net/m0_37040022/article/details/81222967" target="_blank" rel="noopener">《深入剖析tomcat》思维导图</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;以前在CSDN写了，这里直接放链接吧&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/m0_37040022/article/details/81222967&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《深入剖析tomcat》思维导
+      
+    
+    </summary>
+    
+      <category term="tomcat" scheme="http://yoursite.com/categories/tomcat/"/>
+    
+    
+      <category term="深入剖析tomcat" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win10安装MySQL8</title>
+    <link href="http://yoursite.com/2018/08/01/win10%E5%AE%89%E8%A3%85MySQL8/"/>
+    <id>http://yoursite.com/2018/08/01/win10安装MySQL8/</id>
+    <published>2018-07-31T16:10:08.000Z</published>
+    <updated>2018-08-01T14:19:16.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>以前在CSDN写了，这里直接放链接吧<br><a href="https://blog.csdn.net/m0_37040022/article/details/81253235" target="_blank" rel="noopener">win10安装MySQL8</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;以前在CSDN写了，这里直接放链接吧&lt;br&gt;&lt;a href=&quot;https://blog.csdn.net/m0_37040022/article/details/81253235&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;win10安装MySQL8&lt;/
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://yoursite.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL安装" scheme="http://yoursite.com/tags/MySQL%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown的使用教程</title>
+    <link href="http://yoursite.com/2018/07/28/Markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/07/28/Markdown使用教程/</id>
+    <published>2018-07-28T07:04:31.000Z</published>
+    <updated>2018-08-01T14:19:07.364Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Markdown的使用教程"><a href="#Markdown的使用教程" class="headerlink" title="Markdown的使用教程"></a>Markdown的使用教程</h1><h2 id="1-markdown介绍"><a href="#1-markdown介绍" class="headerlink" title="1. markdown介绍"></a>1. markdown介绍</h2><h3 id="1-1-字体设置"><a href="#1-1-字体设置" class="headerlink" title="1.1. 字体设置"></a>1.1. 字体设置</h3><p>首先给大家介绍一下 <strong>markdown</strong> 是一种 <em>易读易写</em> 的标记性语言</p><h4 id="1-1-1设置字体颜色"><a href="#1-1-1设置字体颜色" class="headerlink" title="1.1.1设置字体颜色"></a>1.1.1设置字体颜色</h4><p>使用\<font>\</font>标签，和html格式一致</p><font color="red"> <em>markdown</em> </font><h4 id="1-1-2其他设置"><a href="#1-1-2其他设置" class="headerlink" title="1.1.2其他设置"></a>1.1.2其他设置</h4><ul><li>加粗 前后用<strong>包裹 </strong>加粗**</li><li>斜体 前后用<em>包裹 </em>斜体*</li><li>删除线 前后用<del>包裹 ~~删除线</del></li><li>底纹 前后用<code>包裹</code>底纹`</li></ul><h2 id="段落设置"><a href="#段落设置" class="headerlink" title="段落设置"></a>段落设置</h2><p>段落前后使用3个波浪线包围起来<br>\<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\</span><br></pre></td></tr></table></figure></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">段落设置 </span><br><span class="line"></span><br><span class="line">兴趣驱动学习</span><br></pre></td></tr></table></figure><h2 id="列表设置"><a href="#列表设置" class="headerlink" title="列表设置"></a>列表设置</h2><p>有序列表<br>在每条记录前面添加数字+’.’+空格，如：1. </p><ol><li>css</li><li>java</li><li>python</li></ol><p>无序列表<br>在每条记录前面添加’-‘+空格 </p><ul><li>css</li><li>java</li><li>python</li></ul><h2 id="超链接设置"><a href="#超链接设置" class="headerlink" title="超链接设置"></a>超链接设置</h2><p>  使用[解释说明](链接地址)，注意是英文字符<br>  [<a href="http://www.tjmjimmy.top](www.tjmjimmy.top)" target="_blank" rel="noopener">www.tjmjimmy.top](www.tjmjimmy.top)</a><br>  <a href="www.tjmjimmy.top">www.tjmjimmy.top</a></p><pre><code>快捷模式：下面格式相当于申明了[www.tjmjimmy.top]自带了链接[www.tjmjimmy.top]:www.tjmjimmy.top在后续的使用格式：* + 空格[www.tjmjimmy.top]  这样[]内的文字也有了超链接</code></pre><ul><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li></ul><ul><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li></ul><h3 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h3><p>使用![解释说明](图片链接地址)<br>网络图片（网络绝对地址，包括http://等协议前缀）<br><img src="https://www.baidu.com/img/bd_logo1.png" alt="百度"><br>本人二维码（本地图片,相对路径）<br><img src="image/jimmy_qrcode.jpg" alt="jimmy微信二维码"></p><h3 id="其他链接"><a href="#其他链接" class="headerlink" title="其他链接"></a>其他链接</h3><p>使用尖括号\<url>，注意的是url也是包括http://前缀的<br><a href="http://www.tjmjimmy.top/" target="_blank" rel="noopener">http://www.tjmjimmy.top/</a><br>不过这种链接别人一般不知道表达的含义是什么</url></p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>这里不得不吐槽一下，在markdown中添加表格是很麻烦的一件事<br>|a|b|c|    表头<br>|:–|:–|:–|  对齐方式：’:’在哪边就表示往哪边对齐<br>|a|b|c|<br>|–:|:–:|:–|<br>|jimmy|love|eat fruits|<br>|哈哈|呵呵|哦哦|</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h4><p>左右两边给个单引号<code></code><br>行内代码 <code>www.tjmjimmy.top</code></p><h4 id="块代码"><a href="#块代码" class="headerlink" title="块代码"></a>块代码</h4><p>前面段落那里就说过了<br>\<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\</span><br></pre></td></tr></table></figure></p><p>java代码示范<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"Markdown!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>用3个*表示，在文本前面加就在前面显示分割线，加在后面就在后面显示分割线</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">***</span></span><br><span class="line">段落文字</span><br><span class="line"><span class="emphasis">***</span></span><br></pre></td></tr></table></figure><hr><p>第一段</p><hr><p>第二段</p><hr><h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><h4 id="特殊转义字符"><a href="#特殊转义字符" class="headerlink" title="特殊转义字符"></a>特殊转义字符</h4><p>在某些代码中会被转义的字符<br>前后用英文的<code></code>包裹，格式：`需要转义的字符`<br>&copy;<br>AT&amp;T<br>AT&amp;T<br><code>&amp;copy;</code></p><h4 id="反斜杠转义字符"><a href="#反斜杠转义字符" class="headerlink" title="反斜杠转义字符"></a>反斜杠转义字符</h4><p>例如输出一个反斜杠，就是打2个反斜杠：\\<br>\<br>\\<br>*<br>{}<br>##</p><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>### 标题</p><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><p>#### 标题</p><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><p>##### 标题</p><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>###### 标题</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Markdown的使用教程&quot;&gt;&lt;a href=&quot;#Markdown的使用教程&quot; class=&quot;headerlink&quot; title=&quot;Markdown的使用教程&quot;&gt;&lt;/a&gt;Markdown的使用教程&lt;/h1&gt;&lt;h2 id=&quot;1-markdown介绍&quot;&gt;&lt;a href
+      
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://yoursite.com/categories/markdown/"/>
+    
+    
+      <category term="Markdown使用教程" scheme="http://yoursite.com/tags/Markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2018/07/22/hello-world/"/>
+    <id>http://yoursite.com/2018/07/22/hello-world/</id>
+    <published>2018-07-22T14:49:11.850Z</published>
+    <updated>2018-07-22T14:49:11.850Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
