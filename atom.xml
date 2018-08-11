@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-11T05:35:43.193Z</updated>
+  <updated>2018-08-11T06:50:41.736Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>solr(二)、solr管理功能</title>
+    <link href="http://yoursite.com/2018/08/11/solr(%E4%BA%8C)-solr%E7%AE%A1%E7%90%86%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2018/08/11/solr(二)-solr管理功能/</id>
+    <published>2018-08-11T05:53:34.000Z</published>
+    <updated>2018-08-11T06:50:41.736Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="管理界面"><a href="#管理界面" class="headerlink" title="管理界面"></a>管理界面</h3><p><img src="/image/solr-2/solr-managerUI.png" alt=""></p><h4 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h4><p>仪表盘，显示了该Solr实例开始启动运行的时间、版本、系统资源、jvm等信息</p><h4 id="Logging"><a href="#Logging" class="headerlink" title="Logging"></a>Logging</h4><p>solr运行日志信息</p><h4 id="Core-Admin"><a href="#Core-Admin" class="headerlink" title="Core Admin"></a>Core Admin</h4><p>Solr Core的管理界面。Solr Core 是Solr的一个独立运行实例单位，它可以对外提供索引和搜索服务，一个Solr工程可以运行多个SolrCore（Solr实例），一个Core对应一个索引目录。<img src="/image/solr-2/solr-addsolrcore.png" alt=""><br>点击“Add Core”添加solrCore报错，我们一般不在这添加solrCore，具体添加步骤：</p><ol><li>在solrhome目录下复制collection1改名为collection2</li><li>修改collection2文件下的core.properties文件，name=collection2</li><li>重启tomcat</li></ol><h4 id="java-properties"><a href="#java-properties" class="headerlink" title="java properties"></a>java properties</h4><p>Solr在JVM 运行环境中的属性信息，包括类路径、文件编码、jvm内存设置等信息。</p><h4 id="Tread-Dump"><a href="#Tread-Dump" class="headerlink" title="Tread Dump"></a>Tread Dump</h4><p>显示Solr Server中当前活跃线程信息，同时也可以跟踪线程运行栈信息。</p><h4 id="Core-selector"><a href="#Core-selector" class="headerlink" title="Core selector"></a>Core selector</h4><p>选择一个solrCore后出现如下页面<img src="/image/solr-2/solr-coreselect.png" alt=""></p><ol><li><strong>Overview</strong>：该solrCore的基本信息</li><li><strong>Analysis</strong>：通过此界面可以测试索引分析器和搜索分析器的执行情况<img src="/image/solr-2/solr-Analysis.png" alt=""></li><li><strong>Dataimport</strong>：可以定义数据导入处理器，从关系数据库将数据导入 到Solr索引库中。</li><li><strong>Document</strong>：通过此菜单可以创建索引、更新索引、删除索引等操作。<br>/update表示更新索引，solr默认根据id（唯一约束）域来更新Document的内容，如果根据id值搜索不到id域则会执行添加操作，如果找到则更新。</li><li><strong>Ping</strong>：检查服务器是否能连通</li><li><strong>Query</strong>：通过/select执行搜索索引，必须指定“q”查询条件方可搜索。<br><img src="/image/solr-2/solr-query.png" alt=""></li><li><strong>Schema Browser</strong>：查看Schema域的信息<br><img src="/image/solr-2/solr-schemaBrowser.png" alt=""></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;管理界面&quot;&gt;&lt;a href=&quot;#管理界面&quot; class=&quot;headerlink&quot; title=&quot;管理界面&quot;&gt;&lt;/a&gt;管理界面&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/image/solr-2/solr-managerUI.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id
+      
+    
+    </summary>
+    
+      <category term="solr" scheme="http://yoursite.com/categories/solr/"/>
+    
+    
+      <category term="solr,搜索引擎" scheme="http://yoursite.com/tags/solr-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
   
   <entry>
     <title>solr(一)、solr安装部署</title>
