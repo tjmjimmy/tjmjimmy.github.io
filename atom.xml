@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-01T14:16:35.928Z</updated>
+  <updated>2018-08-11T05:27:44.472Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>solr(一)、solr安装部署</title>
+    <link href="http://yoursite.com/2018/08/05/solr(%E4%B8%80)-solr%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2/"/>
+    <id>http://yoursite.com/2018/08/05/solr(一)-solr安装部署/</id>
+    <published>2018-08-05T06:46:04.000Z</published>
+    <updated>2018-08-11T05:27:44.472Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="solr简介"><a href="#solr简介" class="headerlink" title="solr简介"></a>solr简介</h3><p>&ensp;&ensp;&ensp;&ensp;Solr 是Apache下的一个顶级开源项目，采用Java开发，它是基于Lucene的全文搜索服务器。Solr提供了比Lucene更为丰富的查询语言，同时实现了可配置、可扩展，并对索引、搜索性能进行了优化。<br>&ensp;&ensp;&ensp;&ensp;Solr可以独立运行，运行在Jetty、Tomcat等这些Servlet容器中，Solr 索引的实现方法很简单，用 POST 方法向 Solr 服务器发送一个描述 Field 及其内容的 XML 文档，Solr根据xml文档添加、删除、更新索引 。Solr 搜索只需要发送 HTTP GET 请求，然后对 Solr 返回Xml、json等格式的查询结果进行解析，组织页面布局。Solr不提供构建UI的功能，Solr提供了一个管理界面，通过管理界面可以查询Solr的配置和运行情况。</p><h3 id="solr下载"><a href="#solr下载" class="headerlink" title="solr下载"></a>solr下载</h3><p>下载地址：<a href="http://lucene.apache.org/" target="_blank" rel="noopener">http://lucene.apache.org/</a><br>在下载页面上我们可以看到lucene和solr的下载按钮，且lucene和solr的版本号是一样的，因为solr是基于lucene的全文搜索引擎服务器。</p><h3 id="solr目录介绍"><a href="#solr目录介绍" class="headerlink" title="solr目录介绍"></a>solr目录介绍</h3><p><img src="image/solr-1/solr-catalog.png" alt="solr目录文件结构"><br>bin: solr常用脚本<br>contrib: solr的拓展软件/插件，用于增强solr的功能。<br>dist：Solr的核心JAR包和扩展JAR包, 把Solr嵌入到某个应用程序的时候会用到这些JAR包。</p><ul><li>dist\solrj-lib: 构建基于Solr的客户端时所需的JAR包</li><li>dist\test-framework: 测试Solr时候所需的JAR包</li></ul><p>docs：solr的API文档<br>example：solr工程的例子目录<br>licenses：solr相关的许可信息<br>server: 在本地把Solr作为服务运行的必要文件</p><h3 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h3><h4 id="solr4-x的环境要求"><a href="#solr4-x的环境要求" class="headerlink" title="solr4.x的环境要求"></a>solr4.x的环境要求</h4><p>jdk1.7以上<br>tomcat7.0以上</p><h4 id="solr5-x的环境要求"><a href="#solr5-x的环境要求" class="headerlink" title="solr5.x的环境要求"></a>solr5.x的环境要求</h4><p>jdk1.8以上（虽然官网没有明确说明要使用jdk1.8，但是其中一部分功能锁需求的JDK版本在JDK1.7以下是没有的）<br>tomcat8.0以上</p><h3 id="tomcat集成solr"><a href="#tomcat集成solr" class="headerlink" title="tomcat集成solr"></a>tomcat集成solr</h3><ol><li><strong>将solr-6.6.0\server\solr-webapp下的webapp复制到tomcat（我用的tomcat是8.0版本）的webapps目录下，并改名为solr（改名不是必须的，只是为了方便）</strong></li><li><strong>将solr-6.6.0\server\lib下的metrics开头的5个jar包、solr-6.6.0\server\lib\ext路径下的所有jar包、solr-6.6.0\dist\solr-dataimporthandler-6.6.0.jar、solr-6.6.0\dist\solr-dataimporthandler-extras-6.6.0.jar复制到步骤1中的solr\WEB-INF\lib目录下</strong></li><li><strong>创建存放core的目录（我放在D盘根目录下），在D盘创建solrhome文件夹，将solr-6.6.0\server\solr下的所有文件复制到D:\solrhome目录下</strong></li><li><strong>修改tomcat下的solr配置文件，打开tomcat8\webapps\solr\WEB-INF下的web.xml，找到env-entry标签，大概在40行，去掉注解，设置env-entry-value值为D:/solrhome</strong><img src="image/solr-1/solrhome-setting.png" alt=""><strong>也可以将security-constraint标签注释掉，这是一段权限代码，也就是你在浏览器打开solr，其他人也可以登录</strong><img src="image/solr-1/solr-security-setting.png" alt=""></li><li><strong>在tomcat8\webapps\solr\WEB-INF目录下创建classes文件夹，将solr-6.6.0\server\resources下的log4j.properties复制到此目录,并修改相关配置</strong><img src="image/solr-1/log-setting.png" alt=""></li><li><strong>启动tomcat，访问localhost:8080/solr/index.html</strong><br><img src="image/solr-1/solr-success.png" alt=""></li></ol><h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><p><strong>solrcore</strong>: 一个solrcore相当于mysql中一个数据库，储存索引</p><p><strong>solrhome</strong>: 管理solrcore，可以存放多个solrcore，每个solrcore之间相互隔离</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;solr简介&quot;&gt;&lt;a href=&quot;#solr简介&quot; class=&quot;headerlink&quot; title=&quot;solr简介&quot;&gt;&lt;/a&gt;solr简介&lt;/h3&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;Solr 是Apache下的一个顶级开源项目，采用Java开
+      
+    
+    </summary>
+    
+      <category term="solr" scheme="http://yoursite.com/categories/solr/"/>
+    
+    
+      <category term="solr,搜索引擎" scheme="http://yoursite.com/tags/solr-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
   
   <entry>
     <title>《Thinking in Java》第四版笔记---类的加载和对象初始化</title>
@@ -139,52 +164,6 @@
     
     
       <category term="MySQL安装" scheme="http://yoursite.com/tags/MySQL%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown的使用教程</title>
-    <link href="http://yoursite.com/2018/07/28/Markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/07/28/Markdown使用教程/</id>
-    <published>2018-07-28T07:04:31.000Z</published>
-    <updated>2018-08-01T14:19:07.364Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Markdown的使用教程"><a href="#Markdown的使用教程" class="headerlink" title="Markdown的使用教程"></a>Markdown的使用教程</h1><h2 id="1-markdown介绍"><a href="#1-markdown介绍" class="headerlink" title="1. markdown介绍"></a>1. markdown介绍</h2><h3 id="1-1-字体设置"><a href="#1-1-字体设置" class="headerlink" title="1.1. 字体设置"></a>1.1. 字体设置</h3><p>首先给大家介绍一下 <strong>markdown</strong> 是一种 <em>易读易写</em> 的标记性语言</p><h4 id="1-1-1设置字体颜色"><a href="#1-1-1设置字体颜色" class="headerlink" title="1.1.1设置字体颜色"></a>1.1.1设置字体颜色</h4><p>使用\<font>\</font>标签，和html格式一致</p><font color="red"> <em>markdown</em> </font><h4 id="1-1-2其他设置"><a href="#1-1-2其他设置" class="headerlink" title="1.1.2其他设置"></a>1.1.2其他设置</h4><ul><li>加粗 前后用<strong>包裹 </strong>加粗**</li><li>斜体 前后用<em>包裹 </em>斜体*</li><li>删除线 前后用<del>包裹 ~~删除线</del></li><li>底纹 前后用<code>包裹</code>底纹`</li></ul><h2 id="段落设置"><a href="#段落设置" class="headerlink" title="段落设置"></a>段落设置</h2><p>段落前后使用3个波浪线包围起来<br>\<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\</span><br></pre></td></tr></table></figure></p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">段落设置 </span><br><span class="line"></span><br><span class="line">兴趣驱动学习</span><br></pre></td></tr></table></figure><h2 id="列表设置"><a href="#列表设置" class="headerlink" title="列表设置"></a>列表设置</h2><p>有序列表<br>在每条记录前面添加数字+’.’+空格，如：1. </p><ol><li>css</li><li>java</li><li>python</li></ol><p>无序列表<br>在每条记录前面添加’-‘+空格 </p><ul><li>css</li><li>java</li><li>python</li></ul><h2 id="超链接设置"><a href="#超链接设置" class="headerlink" title="超链接设置"></a>超链接设置</h2><p>  使用[解释说明](链接地址)，注意是英文字符<br>  [<a href="http://www.tjmjimmy.top](www.tjmjimmy.top)" target="_blank" rel="noopener">www.tjmjimmy.top](www.tjmjimmy.top)</a><br>  <a href="www.tjmjimmy.top">www.tjmjimmy.top</a></p><pre><code>快捷模式：下面格式相当于申明了[www.tjmjimmy.top]自带了链接[www.tjmjimmy.top]:www.tjmjimmy.top在后续的使用格式：* + 空格[www.tjmjimmy.top]  这样[]内的文字也有了超链接</code></pre><ul><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li></ul><ul><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li><li><a href="www.tjmjimmy.top">www.tjmjimmy.top</a></li></ul><h3 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h3><p>使用![解释说明](图片链接地址)<br>网络图片（网络绝对地址，包括http://等协议前缀）<br><img src="https://www.baidu.com/img/bd_logo1.png" alt="百度"><br>本人二维码（本地图片,相对路径）<br><img src="image/jimmy_qrcode.jpg" alt="jimmy微信二维码"></p><h3 id="其他链接"><a href="#其他链接" class="headerlink" title="其他链接"></a>其他链接</h3><p>使用尖括号\<url>，注意的是url也是包括http://前缀的<br><a href="http://www.tjmjimmy.top/" target="_blank" rel="noopener">http://www.tjmjimmy.top/</a><br>不过这种链接别人一般不知道表达的含义是什么</url></p><h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>这里不得不吐槽一下，在markdown中添加表格是很麻烦的一件事<br>|a|b|c|    表头<br>|:–|:–|:–|  对齐方式：’:’在哪边就表示往哪边对齐<br>|a|b|c|<br>|–:|:–:|:–|<br>|jimmy|love|eat fruits|<br>|哈哈|呵呵|哦哦|</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h4><p>左右两边给个单引号<code></code><br>行内代码 <code>www.tjmjimmy.top</code></p><h4 id="块代码"><a href="#块代码" class="headerlink" title="块代码"></a>块代码</h4><p>前面段落那里就说过了<br>\<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\</span><br></pre></td></tr></table></figure></p><p>java代码示范<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"Markdown!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>用3个*表示，在文本前面加就在前面显示分割线，加在后面就在后面显示分割线</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">***</span></span><br><span class="line">段落文字</span><br><span class="line"><span class="emphasis">***</span></span><br></pre></td></tr></table></figure><hr><p>第一段</p><hr><p>第二段</p><hr><h3 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h3><h4 id="特殊转义字符"><a href="#特殊转义字符" class="headerlink" title="特殊转义字符"></a>特殊转义字符</h4><p>在某些代码中会被转义的字符<br>前后用英文的<code></code>包裹，格式：`需要转义的字符`<br>&copy;<br>AT&amp;T<br>AT&amp;T<br><code>&amp;copy;</code></p><h4 id="反斜杠转义字符"><a href="#反斜杠转义字符" class="headerlink" title="反斜杠转义字符"></a>反斜杠转义字符</h4><p>例如输出一个反斜杠，就是打2个反斜杠：\\<br>\<br>\\<br>*<br>{}<br>##</p><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>### 标题</p><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><p>#### 标题</p><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><p>##### 标题</p><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>###### 标题</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Markdown的使用教程&quot;&gt;&lt;a href=&quot;#Markdown的使用教程&quot; class=&quot;headerlink&quot; title=&quot;Markdown的使用教程&quot;&gt;&lt;/a&gt;Markdown的使用教程&lt;/h1&gt;&lt;h2 id=&quot;1-markdown介绍&quot;&gt;&lt;a href
-      
-    
-    </summary>
-    
-      <category term="markdown" scheme="http://yoursite.com/categories/markdown/"/>
-    
-    
-      <category term="Markdown使用教程" scheme="http://yoursite.com/tags/Markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2018/07/22/hello-world/"/>
-    <id>http://yoursite.com/2018/07/22/hello-world/</id>
-    <published>2018-07-22T14:49:11.850Z</published>
-    <updated>2018-07-22T14:49:11.850Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
