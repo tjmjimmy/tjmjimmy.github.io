@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-12T03:18:18.917Z</updated>
+  <updated>2018-08-12T04:30:37.298Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>solr(四)、配置中文分词器</title>
+    <link href="http://yoursite.com/2018/08/12/solr(%E5%9B%9B)-%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%99%A8/"/>
+    <id>http://yoursite.com/2018/08/12/solr(四)-配置中文分词器/</id>
+    <published>2018-08-12T03:38:19.000Z</published>
+    <updated>2018-08-12T04:30:37.298Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="下载jar包"><a href="#下载jar包" class="headerlink" title="下载jar包"></a>下载jar包</h4><p>网上下载IKAnalyzer2012FF_u1.jar</p><h4 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h4><p><img src="/image/solr-4/solr-AnalyzerCatalog.png" alt="Analyzer文件说明"><br><strong>*.dic</strong>：.dic后缀文件是自定义词典和停用词词典，这些文件内容是可以自定义的<br><strong>IKAnalyzer.cfg.xml</strong>：很明显这是中文分词器的配置文件<br><strong>IKAnalyzer2012FF_u1.jar</strong>：所依赖的jar包</p><h4 id="配置中文分词器"><a href="#配置中文分词器" class="headerlink" title="配置中文分词器"></a>配置中文分词器</h4><ol><li>将IKAnalyzer2012FF_u1.jar添加到tomcat下solr工程solr\WEB-INF\lib目录下。</li><li>复制IKAnalyzer的配置文件和自定义词典和停用词词典到solr工程的solr\WEB-INF\classes目录下<font color="red">（注意词典的字符集是utf-8）</font></li><li><p>在schema.xml（上一节已经讲过，在SolrCore的conf目录下）中添加一个自定义的fieldType，使用中文分析器。</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">fieldType</span> <span class="attr">name</span>=<span class="string">"text_ik"</span> <span class="attr">lass</span>=<span class="string">"solr.TextField"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">analyzer</span> <span class="attr">class</span>=<span class="string">"org.wltea.analyzer.lucene.IKAnalyzer"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fieldType</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>定义field，指定field的type属性为text_ik，如下所示</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"title_ik"</span> <span class="attr">type</span>=<span class="string">"text_ik"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"content_ik"</span> <span class="attr">type</span>=<span class="string">"text_ik"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"false"</span> <span class="attr">multiValued</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>重启tomcat</p></li></ol><h4 id="测试一下"><a href="#测试一下" class="headerlink" title="测试一下"></a>测试一下</h4><p>Analyse Fieldname / FieldType选择上一步骤配置的title_ik<br><img src="/image/solr-4/solr-Analyzertest-1.png" alt=""><br>可以看出分词效果是我们的中文理解思维，而不是简单得分成一个一个字，如果想看对比效果，将schema.xml文件中的中文分词器相关配置注释掉，重启tomcat，再测试一遍就知道了。</p><h4 id="设置业务系统Field"><a href="#设置业务系统Field" class="headerlink" title="设置业务系统Field"></a>设置业务系统Field</h4><p>如果不使用Solr提供的Field可以针对具体的业务需要自定义一套Field，如下是商品信息Field：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"product_name"</span> <span class="attr">type</span>=<span class="string">"text_ik"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"product_price"</span>  <span class="attr">type</span>=<span class="string">"float"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"product_description"</span> <span class="attr">type</span>=<span class="string">"text_ik"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"product_picture"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"false"</span> <span class="attr">stored</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"product_catalog_name"</span> <span class="attr">type</span>=<span class="string">"string"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">field</span> <span class="attr">name</span>=<span class="string">"product_keywords"</span> <span class="attr">type</span>=<span class="string">"text_ik"</span> <span class="attr">indexed</span>=<span class="string">"true"</span> <span class="attr">stored</span>=<span class="string">"false"</span> <span class="attr">multiValued</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">copyField</span> <span class="attr">source</span>=<span class="string">"product_name"</span> <span class="attr">dest</span>=<span class="string">"product_keywords"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">copyField</span> <span class="attr">source</span>=<span class="string">"product_description"</span> <span class="attr">dest</span>=<span class="string">"product_keywords"</span>/&gt;</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;下载jar包&quot;&gt;&lt;a href=&quot;#下载jar包&quot; class=&quot;headerlink&quot; title=&quot;下载jar包&quot;&gt;&lt;/a&gt;下载jar包&lt;/h4&gt;&lt;p&gt;网上下载IKAnalyzer2012FF_u1.jar&lt;/p&gt;
+&lt;h4 id=&quot;文件说明&quot;&gt;&lt;a href=
+      
+    
+    </summary>
+    
+      <category term="solr" scheme="http://yoursite.com/categories/solr/"/>
+    
+    
+      <category term="solr,搜索引擎" scheme="http://yoursite.com/tags/solr-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
   
   <entry>
     <title>solr(三)、Schema.xml讲解</title>
